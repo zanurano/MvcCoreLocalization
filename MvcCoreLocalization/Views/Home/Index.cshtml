@@ -1,0 +1,18 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.AspNetCore.Http
+@inject IViewLocalizer localizer
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Welcome"] you use language </h1>
+    <p>@ViewData["Learn"] <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div class="container">
+    @Context.Request.Cookies[".AspNetCore.Culture"]<br />
+    @{
+        IHttpContextAccessor httpContextaccessor;
+    }
+    @*@httpContextaccessor.HttpContext.Request.Cookies[".AspNetCore.Culture"]*@
+</div>

@@ -1,0 +1,43 @@
+﻿@model Registration;
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IHtmlLocalizer<SharedResource> sharedLocalizer
+@{
+    ViewData["Title"] = "Registration";
+    Layout = "_Layout";
+}
+
+@*<h1>@ViewData["Title"]</h1>*@
+<h1>@sharedLocalizer["RegistrationMember"]</h1>
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-horizontal col-4">
+            <form>
+                <div class="form-group">
+                    <label asp-for="FullName"></label>
+                    <input asp-for="FullName" type="text" class="form-control" />
+                    <span class="text-danger" asp-validation-for="FullName"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Address"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span class="text-danger" asp-validation-for="Address"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="City"></label>
+                    <input asp-for="City" type="text" class="form-control" />
+                    <span class="text-danger" asp-validation-for="City"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BirthDate"></label>
+                    <input asp-for="BirthDate" type="date" class="form-control" />
+                    <span class="text-danger" asp-validation-for="BirthDate"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span class="text-danger" asp-validation-for="Email"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
